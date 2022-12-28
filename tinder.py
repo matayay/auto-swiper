@@ -9,8 +9,8 @@ class Tinder():
     def __init__(self):
         chrome_options = Options()
         chrome_options.add_experimental_option("prefs", {
-            "profile.default_content_setting_values.notifications":1,
-            "profile.default_content_setting_values.geolocation": 2,
+            "profile.default_content_setting_values.notifications":2,
+            "profile.default_content_setting_values.geolocation": 1,
         })
 
         self.driver = webdriver.Chrome()
@@ -54,7 +54,7 @@ class Tinder():
         time.sleep(1)
         # Notifications
         self.driver.find_element(By.XPATH, value='//*[@id="q-839802255"]/main/div/div/div/div[3]/button[2]').click()
-        time.sleep(8)
+        time.sleep(10)
         # Lightmode
         self.driver.find_element(By.XPATH, value='//*[@id="q-839802255"]/main/div/div[2]/button').click() 
 
