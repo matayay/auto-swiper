@@ -61,7 +61,7 @@ class Tinder():
     def likeLoop(self):
         while True:
             for i in range(0, 5):
-                time.sleep(2)
+                time.sleep(1)
 
                 try:
                     # Click the like button
@@ -80,7 +80,7 @@ class Tinder():
                         except:
                             break
 
-            time.sleep(2)
+            time.sleep(1)
             try:
                 # homescreen popup
                 self.driver.find_element(By.XPATH, value='//*[@id="q-839802255"]/main/div/div[2]/button[2]').click()
