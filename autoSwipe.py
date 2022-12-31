@@ -7,7 +7,7 @@ from secret import email, password
 
 choice = 'NULL'
 
-while choice != 1 and choice != 2:
+while choice != '1' and choice != '2':
     choice = input("1. Tinder" + "\n" + "2. Bumble" + "\n")
 
     if choice in '1':
