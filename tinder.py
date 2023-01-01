@@ -61,7 +61,7 @@ class Tinder():
     def likeLoop(self):
         while True:
             for i in range(0, 5):
-                time.sleep(3)
+                time.sleep(1)
 
                 try:
                     # Click the like button
