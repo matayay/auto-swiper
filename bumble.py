@@ -64,6 +64,18 @@ class Bumble():
                     # Click like button
                     self.driver.find_element(By.CLASS_NAME, value='encounters-action--like').click()
 
+                    num_swipes = open('bumble_swipes.txt', 'r')
+                    curr_swipes = num_swipes.readline()
+                    matches = num_swipes.readline()
+                    curr_swipes = int(curr_swipes)
+                    curr_swipes += 1
+                    curr_swipes = str(curr_swipes)
+                    num_swipes.close()
+
+                    update = open('bumble_swipes.txt', 'w')
+                    update.write(curr_swipes + "\n" + matches)
+                    update.close()
+
                 except:
                     break
 

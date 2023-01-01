@@ -61,11 +61,23 @@ class Tinder():
     def likeLoop(self):
         while True:
             for i in range(0, 5):
-                time.sleep(1)
+                time.sleep(3)
 
                 try:
                     # Click the like button
                     self.driver.find_element(By.CSS_SELECTOR, '#q888578821 > div > div.App__body.H\(100\%\).Pos\(r\).Z\(0\) > div > main > div.H\(100\%\) > div > div > div.Mt\(a\).Px\(4px\)--s.Pos\(r\).Expand.H\(--recs-card-height\)--ml.Maw\(--recs-card-width\)--ml > div.recsCardboard__cardsContainer.H\(100\%\).Pos\(r\).Z\(1\) > div > div.Pos\(a\).B\(0\).Iso\(i\).W\(100\%\).Start\(0\).End\(0\) > div > div.Mx\(a\).Fxs\(0\).Sq\(70px\).Sq\(60px\)--s.Bd.Bdrs\(50\%\).Bdc\(\$c-ds-border-gamepad-like-default\) > button').click()
+
+                    num_swipes = open('tinder_swipes.txt', 'r')
+                    curr_swipes = num_swipes.readline()
+                    matches = num_swipes.readline()
+                    curr_swipes = int(curr_swipes)
+                    curr_swipes += 1
+                    curr_swipes = str(curr_swipes)
+                    num_swipes.close()
+
+                    update = open('tinder_swipes.txt', 'w')
+                    update.write(curr_swipes + "\n" + matches)
+                    update.close()
 
                 except:
                     try:
